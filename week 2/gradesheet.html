@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Sheet</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+        #total, #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Grade Sheet</h1>
+
+    <label for="english">English:</label>
+    <input type="number" id="english">
+
+    <label for="nepali">Nepali:</label>
+    <input type="number" id="nepali">
+
+    <label for="science">Science:</label>
+    <input type="number" id="science">
+
+    <label for="maths">Maths:</label>
+    <input type="number" id="maths">
+
+    <label for="socialStudies">Social Studies:</label>
+    <input type="number" id="socialStudies">
+
+    <label for="optionalMath">Optional Math:</label>
+    <input type="number" id="optionalMath">
+
+    <label for="computerScience">Computer Science:</label>
+    <input type="number" id="computerScience">
+
+    <label for="health">Health:</label>
+    <input type="number" id="health">
+
+    <br>
+
+    <button type="button" onclick="calculateGrades()">Calculate Grades</button>
+
+    <div id="total"></div>
+    <div id="result"></div>
+
+    <script>
+        function calculateGrades() {
+            
+            let totalMarks =Number(document.getElementById("english").value) +
+            Number(document.getElementById("nepali").value) +
+            Number(document.getElementById("maths").value) +
+            Number(document.getElementById("science").value) +
+            Number(document.getElementById("socialStudies").value) +
+            Number(document.getElementById("optionalMath").value) +
+            Number(document.getElementById("computerScience").value) +
+            Number(document.getElementById("health").value);
+
+            document.getElementById("total").innerHTML =
+                "Total Marks: " + totalMarks;
+
+            let result = document.getElementById("result");
+
+            if (totalMarks >= 700) {
+                result.innerHTML = "Result: Distinction";
+                result.style.color = "green";
+            } else if (totalMarks >= 600) {
+                result.innerHTML = "Result: First Division";
+                result.style.color = "black";
+            } else if (totalMarks >= 500) {
+                result.innerHTML = "Result: Second Division";
+                result.style.color = "black";
+            } else if (totalMarks >= 400) {
+                result.innerHTML = "Result: Third Division";
+                result.style.color = "black";
+            } else {
+                result.innerHTML = "Result: Fail";
+                result.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>

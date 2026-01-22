@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Example</title>
+</head>
+<body>
+
+    <h2>Check Age Category</h2>
+
+    <p id="message"></p>
+
+    <button onclick="checkAge()">Check Age</button>
+
+    <script>
+        function checkAge() {
+            // Variables
+            let age = 16;
+
+            // Operator
+            let nextYearAge = age + 1;
+
+            // Control Statement
+            if (age >= 18) {
+                document.getElementById("message").innerHTML = 
+                "You are " + age + " years old and an adult.";
+            } else {
+                document.getElementById("message").innerHTML = 
+                "You are " + age + " years old and a minor. Next year you will be " + nextYearAge + ".";
+            }
+        }
+    </script>
+
+</body>
+</html>
